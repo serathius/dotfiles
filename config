@@ -139,9 +139,9 @@ bindcode 233 exec xbacklight -inc 10
 for_window [class="google-chrome"] border 1pixel
 for_window [class="Transmission"] floating enable
 for_window [class="Guake"] floating enable
-for_window [class="skype"] floating enable
 for_window [class="Skype"] floating enable
 
 exec google-chrome
 exec guake
-exec Skype
+exec skype
+exec nm-applet
