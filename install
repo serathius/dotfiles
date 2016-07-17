@@ -1,0 +1,11 @@
+#!/bin/bash -e
+pushd $(dirname $0) > /dev/null
+  SCRIPTPATH=$(pwd)
+popd > /dev/null
+pushd ~
+  ln -sf "$SCRIPTPATH/i3status.conf" .i3status.conf
+popd
+mkdir -p ~/.i3
+pushd ~/.i3
+  ln -sf "$SCRIPTPATH/i3.conf" config
+popd 
