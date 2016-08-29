@@ -1,5 +1,4 @@
 #!/bin/bash -e
-sudo apt-get install i3blocks
 pushd $(dirname $0) > /dev/null
   SCRIPTPATH=$(pwd)
 popd > /dev/null
