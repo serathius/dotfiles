@@ -58,6 +58,6 @@ export GOPATH=/home/serathius/Projects/go
 export PATH=$PATH:$GOPATH/bin/
 
 # Python
-[[ -f /home/serathius/.local/bin/virtualenvwrapper.sh ]] && source /home/serathius/.local/bin/virtualenvwrapper.sh
-export WORKON_HOME=/home/serathius/.venvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=/home/serathius/.venvs
+[[ -f /home/serathius/.local/bin/virtualenvwrapper.sh ]] && source /home/serathius/.local/bin/virtualenvwrapper.sh
