@@ -22,6 +22,9 @@ mkdir -p ~/.config/i3/
 install_file "$SCRIPTPATH/.config/i3/config" ~/.config/i3/config
 install_file "$SCRIPTPATH/.config/i3/i3blocks.conf" ~/.config/i3/i3blocks.conf
 
+mkdir -p ~/.config/terminator/
+install_file "$SCRIPTPATH/.config/terminator/config" ~/.config/terminator/config
+
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install terminator i3 i3blocks redshift-gtk keepass2 pass undistract-me steam python3-dev python3-pip rofi feh compton
