@@ -10,7 +10,6 @@ function install_file {
   if [[ -f $DST && ! -s $DST ]] ; then mv $DST $DST.old; fi
   if [[ ! -s $DST ]] ; then ln -sf $SRC $DST; fi
 }
-install_file "$SCRIPTPATH/i3blocks.conf" ~/.i3blocks.conf
 install_file "$SCRIPTPATH/.bashrc" ~/.bashrc
 install_file "$SCRIPTPATH/.prompt" ~/.prompt
 install_file "$SCRIPTPATH/.wallpaper.jpg" ~/.wallpaper.jpg
@@ -21,6 +20,7 @@ cp $SCRIPTPATH/.fonts/* ~/.fonts/
 
 mkdir -p ~/.config/i3/
 install_file "$SCRIPTPATH/.config/i3/config" ~/.config/i3/config
+install_file "$SCRIPTPATH/.config/i3/i3blocks.conf" ~/.config/i3/i3blocks.conf
 
 sudo apt-get update
 sudo apt-get -y upgrade
