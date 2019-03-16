@@ -5,9 +5,9 @@ popd > /dev/null
 pushd ~
   ln -sf "$SCRIPTPATH/i3blocks.conf" .i3blocks.conf
 popd
-mkdir -p ~/.i3
-pushd ~/.i3
-  ln -sf "$SCRIPTPATH/i3.conf" config
+mkdir -p ~/.config/i3/
+pushd ~/.config/i3/
+  ln -sf "$SCRIPTPATH/.config/i3/config" config
 popd 
 i3-msg restart
 
