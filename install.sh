@@ -12,7 +12,6 @@ function install_file {
 }
 install_file "$SCRIPTPATH/.bashrc" ~/.bashrc
 install_file "$SCRIPTPATH/.prompt" ~/.prompt
-install_file "$SCRIPTPATH/.wallpaper.jpg" ~/.wallpaper.jpg
 install_file "$SCRIPTPATH/.bash_aliases" ~/.bash_aliases
 
 mkdir -p ~/.fonts
@@ -21,6 +20,8 @@ cp $SCRIPTPATH/.fonts/* ~/.fonts/
 mkdir -p ~/.config/i3/
 install_file "$SCRIPTPATH/.config/i3/config" ~/.config/i3/config
 install_file "$SCRIPTPATH/.config/i3/i3blocks.conf" ~/.config/i3/i3blocks.conf
+mkdir -p ~/.config/i3/scripts
+install_file "$SCRIPTPATH/.config/i3/scripts/wallpaper.sh" ~/.config/i3/scripts/wallpaper.sh
 
 mkdir -p ~/.config/terminator/
 install_file "$SCRIPTPATH/.config/terminator/config" ~/.config/terminator/config

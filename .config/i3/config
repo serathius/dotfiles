@@ -171,5 +171,5 @@ exec_always --no-startup-id xautolock -detectsleep \
   -time 3 -locker "i3lock" \
   -notify 30 \
   -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
-exec_always --no-startup-id feh --bg-scale /home/serathius/.wallpaper.jpg
+exec_always --no-startup-id /home/serathius/.config/i3/scripts/wallpaper.sh
 exec --no-startup-id compton -cCGfF -b -i 0.75 --vsync opengl
