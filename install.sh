@@ -24,6 +24,6 @@ install_file "$SCRIPTPATH/.config/i3/config" ~/.config/i3/config
 
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get -y install terminator i3 i3blocks redshift-gtk keepass2 pass undistract-me steam python3-dev python3-pip rofi
+sudo apt-get -y install terminator i3 i3blocks redshift-gtk keepass2 pass undistract-me steam python3-dev python3-pip rofi feh
 sudo pip3 install virtualenvwrapper
 sudo dpkg-reconfigure keyboard-configuration
