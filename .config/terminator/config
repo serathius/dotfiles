@@ -14,5 +14,5 @@
   [[default]]
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Sans 9
+    font = System San Francisco Display 10
     scrollback_lines = 50000
