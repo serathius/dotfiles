@@ -148,6 +148,7 @@ for_window [class="Terminator"] resize set 1920 1060
 # default workspaces
 assign [class="google-chrome"] $workspace1
 assign [class="jetbrains-pycharm-ce"] $workspace2
+assign [class="Steam"] $workspace4
 
 # key-bindings
 bindsym $mod+f fullscreen
