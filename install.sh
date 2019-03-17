@@ -36,6 +36,21 @@ install_file "$SCRIPTPATH/.gtkrc-2.0" ~/.gtkrc-2.0
 mkdir -p ~/.config/terminator/
 install_file "$SCRIPTPATH/.config/terminator/config" ~/.config/terminator/config
 
+sudo tee /etc/systemd/system/lock.service << EOF
+[Unit]
+Description=Lock the screen on resume from suspend
+
+[Service]
+User=serathius
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/home/serathius/.config/i3/scripts/lock.sh
+
+[Install]
+WantedBy=sleep.target suspend.target
+EOF
+sudo systemctl daemon-reload
+
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install terminator i3 i3blocks redshift-gtk keepass2 pass undistract-me steam python3-dev python3-pip rofi feh compton ffmpeg
