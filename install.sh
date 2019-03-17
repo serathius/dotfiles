@@ -21,9 +21,13 @@ cp $SCRIPTPATH/.fonts/* ~/.fonts/
 mkdir -p ~/.config/i3/
 install_file "$SCRIPTPATH/.config/i3/config" ~/.config/i3/config
 install_file "$SCRIPTPATH/.config/i3/i3blocks.conf" ~/.config/i3/i3blocks.conf
+
 mkdir -p ~/.config/i3/scripts
 install_file "$SCRIPTPATH/.config/i3/scripts/wallpaper.sh" ~/.config/i3/scripts/wallpaper.sh
 install_file "$SCRIPTPATH/.config/i3/scripts/lock.sh" ~/.config/i3/scripts/lock.sh
+
+mkdir -p ~/.config/i3/resources
+cp $SCRIPTPATH/.config/i3/resources/* ~/.config/i3/resources
 
 mkdir -p ~/.config/gtk-3.0/
 install_file "$SCRIPTPATH/.config/gtk-3.0/settings.ini" ~/.config/gtk-3.0/settings.ini
