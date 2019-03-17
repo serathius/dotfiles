@@ -166,7 +166,7 @@ bindsym $mod+Shift+l exec i3lock --color 475263
 # startup
 exec --no-startup-id terminator
 exec --no-startup-id google-chrome
-exec --no-startup-id wicd-gtk
+exec --no-startup-id nm-applet
 exec_always --no-startup-id xautolock -detectsleep \
   -time 3 -locker "i3lock" \
   -notify 30 \
