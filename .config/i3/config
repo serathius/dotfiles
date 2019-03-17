@@ -143,6 +143,8 @@ bindsym $mod+Shift+s sticky toggle
 for_window [class="Pavucontrol"] floating enable
 
 # default workspaces
+assign [class="google-chrome"] $workspace1
+assign [class="jetbrains-pycharm-ce"] $workspace2
 
 # key-bindings
 bindsym $mod+f fullscreen
@@ -165,6 +167,7 @@ bindsym $mod+Shift+l exec i3lock --color 475263
 exec --no-startup-id terminator
 exec --no-startup-id google-chrome
 exec --no-startup-id nm-applet
+exec --no-startup-id pycharm
 exec_always --no-startup-id xautolock -detectsleep \
   -time 3 -locker "i3lock" \
   -notify 30 \
