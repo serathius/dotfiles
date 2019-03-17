@@ -1,4 +1,5 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -e
 
 IMAGE=/tmp/i3lock.png
 TEXT="locked"
