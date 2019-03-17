@@ -9,6 +9,9 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=10000
+export HISTIGNORE="ls:ps:history"
+shopt -s cmdhist
+PROMPT_COMMAND='history -a'
 shopt -s checkwinsize
 source ~/.bash_aliases
 source ~/.prompt
