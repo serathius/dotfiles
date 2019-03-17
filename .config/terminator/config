@@ -12,8 +12,6 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.75
-    background_type = transparent
     cursor_color = "#aaaaaa"
     font = System San Francisco Display 10
     scrollback_lines = 50000
