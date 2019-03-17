@@ -1,87 +1,54 @@
-set $mod Mod4
+# Constants
 
-# font
-font pango: System San Francisco Display 10
+  set $mod Mod4
 
-# window options
-hide_edge_borders both
-new_window pixel
-workspace_auto_back_and_forth no
-floating_modifier $mod
+  set $bg-color 	         #2f343f
+  set $inactive-bg-color   #2f343f
+  set $text-color          #f3f4f5
+  set $inactive-text-color #676E7D
+  set $urgent-bg-color     #E53935
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+  set $workspace1 "1"
+  set $workspace2 "2"
+  set $workspace3 "3"
+  set $workspace4 "4"
+  set $workspace5 "5"
+  set $workspace6 "6"
+  set $workspace7 "7"
+  set $workspace8 "8"
+  set $workspace9 "9"
+  set $workspace10 "10"
 
+# General Configuration
+  font pango: System San Francisco Display 10
+  floating_modifier $mod
+  hide_edge_borders both
+  new_window none
 
-# move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# Window-Related Bindings
+  bindsym $mod+Shift+Left move left
+  bindsym $mod+Shift+Down move down
+  bindsym $mod+Shift+Up move up
+  bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+Shift+h split h
+  bindsym $mod+Shift+h split h
+  bindsym $mod+v split v
+  bindsym $mod+s layout stacking
+  bindsym $mod+w layout tabbed
+  bindsym $mod+e layout toggle split
+  bindsym $mod+Shift+space floating toggle
+  bindsym $mod+space focus mode_toggle
+  bindsym $mod+a focus parent
+  bindsym $mod+Shift+s sticky toggle
 
-# split in vertical orientation
-bindsym $mod+v split v
+  bindsym $mod+Shift+q kill
+  bindsym $mod+f fullscreen
+  bindsym $mod+Shift+minus move scratchpad
+  bindsym F12 scratchpad show
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10"
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
-
-# switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
-
-
-# exit i3
-
-bindsym $mod+r mode "resize"
-mode "resize" {
+# Window resize Bindings
+  bindsym $mod+r mode "resize"
+  mode "resize" {
     bindsym j resize shrink width 10 px or 10 ppt
     bindsym k resize grow height 10 px or 10 ppt
     bindsym l resize shrink height 10 px or 10 ppt
@@ -95,10 +62,11 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
-}
+  }
 
-bindsym $mod+m focus floating; mode "move"
-mode "move" {
+# Window move Bindings
+  bindsym $mod+m focus floating; mode "move"
+  mode "move" {
     bindsym Up move up 20px
     bindsym Left move left 20px
     bindsym Down move down 20px
@@ -107,74 +75,88 @@ mode "move" {
     bindsym $mod+m mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
-}
+  }
 
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+# Workspace-Related Bindings
+  bindsym $mod+Shift+1 move container to workspace $workspace1
+  bindsym $mod+Shift+2 move container to workspace $workspace2
+  bindsym $mod+Shift+3 move container to workspace $workspace3
+  bindsym $mod+Shift+4 move container to workspace $workspace4
+  bindsym $mod+Shift+5 move container to workspace $workspace5
+  bindsym $mod+Shift+6 move container to workspace $workspace6
+  bindsym $mod+Shift+7 move container to workspace $workspace7
+  bindsym $mod+Shift+8 move container to workspace $workspace8
+  bindsym $mod+Shift+9 move container to workspace $workspace9
+  bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# bar
-bar {
+  bindsym $mod+1 workspace $workspace1
+  bindsym $mod+2 workspace $workspace2
+  bindsym $mod+3 workspace $workspace3
+  bindsym $mod+4 workspace $workspace4
+  bindsym $mod+5 workspace $workspace5
+  bindsym $mod+6 workspace $workspace6
+  bindsym $mod+7 workspace $workspace7
+  bindsym $mod+8 workspace $workspace8
+  bindsym $mod+9 workspace $workspace9
+  bindsym $mod+0 workspace $workspace10
+
+# Widow Colours
+  #                       border              background         text                 indicator
+  client.focused          $bg-color           $bg-color          $text-color          #00ff00
+  client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
+  client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
+  client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
+# Bar
+  bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position bottom
 	colors {
-		background $bg-color
-	    	separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+	  background $bg-color
+	  separator #757575
+      #                  border             background         text
+      focused_workspace  $bg-color          $bg-color          $text-color
+      inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+      urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
-}
+  }
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+# Floating
+  for_window [class="Pavucontrol"] floating enable
+  for_window [class="Terminator"] floating enable
+  for_window [class="Terminator"] move position 0 0
+  for_window [class="Terminator"] resize set 1920 1060
 
-# sticky window
-bindsym $mod+Shift+s sticky toggle
+# Program Workspaces
+  assign [class="google-chrome"] $workspace1
+  assign [class="jetbrains-pycharm-ce"] $workspace2
+  assign [class="Steam"] $workspace4
 
+# Restart-Related Bindings
+  bindsym $mod+Shift+c reload
+  bindsym $mod+Shift+r restart
+  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# floating
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Terminator"] floating enable
-for_window [class="Terminator"] move position 0 0
-for_window [class="Terminator"] resize set 1920 1060
+# Function key Bindings
+  bindcode 232 exec /home/serathius/.config/i3/scripts/xbacklight -dec 10
+  bindcode 233 exec /home/serathius/.config/i3/scripts/xbacklight -inc 10
+  bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+  bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB-
 
-# default workspaces
-assign [class="google-chrome"] $workspace1
-assign [class="jetbrains-pycharm-ce"] $workspace2
-assign [class="Steam"] $workspace4
+# Program Bindings
+  bindsym $mod+Return exec terminator
+  bindsym Print exec screenshot
+  bindsym $mod+d exec rofi -show run -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 10"
+  bindsym $mod+Shift+l exec i3lock --color 475263
 
-# key-bindings
-bindsym $mod+f fullscreen
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+minus move scratchpad
-bindsym F12 scratchpad show
-bindcode 232 exec /home/serathius/.config/i3/scripts/xbacklight -dec 10
-bindcode 233 exec /home/serathius/.config/i3/scripts/xbacklight -inc 10
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB-
-bindsym $mod+Return exec terminator
-bindsym $mod+Shift+q kill
-bindsym Print exec screenshot
-bindsym $mod+d exec rofi -show run -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 10"
-bindsym $mod+Shift+l exec i3lock --color 475263
-
-# startup
-exec --no-startup-id terminator
-exec --no-startup-id google-chrome
-exec --no-startup-id nm-applet
-exec --no-startup-id pycharm
-exec_always --no-startup-id xautolock -detectsleep \
-  -time 3 -locker "i3lock" \
-  -notify 30 \
-  -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
-exec_always --no-startup-id /home/serathius/.config/i3/scripts/wallpaper.sh
-exec --no-startup-id compton
+# Startup
+  exec --no-startup-id terminator
+  exec --no-startup-id google-chrome
+  exec --no-startup-id nm-applet
+  exec --no-startup-id pycharm
+  exec_always --no-startup-id xautolock -detectsleep \
+    -time 3 -locker "i3lock" \
+    -notify 30 \
+    -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+  exec_always --no-startup-id /home/serathius/.config/i3/scripts/wallpaper.sh
+  exec --no-startup-id compton
