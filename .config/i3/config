@@ -141,6 +141,9 @@ bindsym $mod+Shift+s sticky toggle
 
 # floating
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Terminator"] floating enable
+for_window [class="Terminator"] move position 0 0
+for_window [class="Terminator"] resize set 1920 1080
 
 # default workspaces
 assign [class="google-chrome"] $workspace1
