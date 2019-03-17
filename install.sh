@@ -7,8 +7,8 @@ popd > /dev/null
 function install_file {
   SRC=$1
   DST=$2
-  if [[ -f $DST && ! -s $DST ]] ; then mv $DST $DST.old; fi
-  if [[ ! -s $DST ]] ; then ln -sf $SRC $DST; fi
+  if [[ -f $DST && ! -L $DST ]] ; then mv $DST $DST.old; fi
+  ln -sf $SRC $DST
 }
 install_file "$SCRIPTPATH/.bashrc" ~/.bashrc
 install_file "$SCRIPTPATH/.prompt" ~/.prompt
