@@ -13,6 +13,7 @@ function install_file {
 install_file "$SCRIPTPATH/.bashrc" ~/.bashrc
 install_file "$SCRIPTPATH/.prompt" ~/.prompt
 install_file "$SCRIPTPATH/.bash_aliases" ~/.bash_aliases
+install_file "$SCRIPTPATH/.config/compton.conf" ~/.config/compton.conf
 
 mkdir -p ~/.fonts
 cp $SCRIPTPATH/.fonts/* ~/.fonts/
