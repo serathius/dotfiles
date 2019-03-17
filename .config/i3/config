@@ -28,9 +28,6 @@ bindsym $mod+Shift+h split h
 # split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
-
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -148,6 +145,7 @@ for_window [class="Pavucontrol"] floating enable
 # default workspaces
 
 # key-bindings
+bindsym $mod+f fullscreen
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
