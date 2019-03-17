@@ -147,7 +147,7 @@
   bindsym $mod+Return exec terminator
   bindsym Print exec screenshot
   bindsym $mod+d exec rofi -show run -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 10"
-  bindsym $mod+Shift+l exec i3lock --color 475263
+  bindsym $mod+Shift+l exec /home/serathius/.config/i3/scripts/lock.sh
 
 # Startup
   exec --no-startup-id terminator
@@ -155,7 +155,7 @@
   exec --no-startup-id nm-applet
   exec --no-startup-id pycharm
   exec_always --no-startup-id xautolock -detectsleep \
-    -time 3 -locker "i3lock" \
+    -time 3 -locker "/home/serathius/.config/i3/scripts/lock.sh" \
     -notify 30 \
     -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
   exec_always --no-startup-id /home/serathius/.config/i3/scripts/wallpaper.sh
