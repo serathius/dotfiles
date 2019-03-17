@@ -55,7 +55,6 @@ sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install terminator i3 i3blocks redshift-gtk keepass2 pass undistract-me steam python3-dev python3-pip rofi feh compton ffmpeg
 sudo pip3 install virtualenvwrapper
-sudo dpkg-reconfigure keyboard-configuration
 
 sudo add-apt-repository -u ppa:snwh/ppa
 sudo apt-get install moka-icon-theme faba-icon-theme faba-mono-icons
