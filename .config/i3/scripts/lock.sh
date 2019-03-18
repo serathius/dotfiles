@@ -4,7 +4,7 @@ set -e
 IMAGE=/tmp/i3lock.png
 TEXT="locked"
 RESOURCES=/home/serathius/.config/i3/resources
-RES=$(xrandr --current | grep '*' | uniq | awk '{print $1}')
+RES=$(xrandr -q|perl -F'\s|,' -lane "/^Sc/&&print join '',@F[8..10]")
 BOXSIZE=$(expr $(echo $RES | cut -d 'x' -f1) / 2)
 
 if [[ $1 != "" ]]; then

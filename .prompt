@@ -5,7 +5,7 @@ build_ps1() {
     local host=''
     [[ $UID -eq 0 ]] && prompt_color='\[\e[1;31m\]'
     [[ $SSH_TTY ]] && host="@$HOSTNAME "
-    echo "${prompt_color}${host}\w\[\e[0m\] \$ "
+    echo "${prompt_color}${host}\W\[\e[0m\] \$ "
 }
 PS1=$(build_ps1)
 PS2='\\ '

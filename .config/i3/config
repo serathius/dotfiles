@@ -43,6 +43,7 @@
 
   bindsym $mod+Shift+q kill
   bindsym $mod+f fullscreen
+  bindsym $mod+Shift+f floating enable, resize set 1920 1060, move position 0 0
   bindsym $mod+Shift+minus move scratchpad
   bindsym F12 scratchpad show
 
@@ -118,8 +119,10 @@
       focused_workspace  $bg-color          $bg-color          $text-color
       inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
       urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
+	  }
   }
+
+  for_window [class="^.*"] border pixel 1
 
 # Floating
   for_window [class="Pavucontrol"] floating enable
