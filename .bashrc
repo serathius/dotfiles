@@ -15,6 +15,8 @@ PROMPT_COMMAND='history -a'
 shopt -s checkwinsize
 source ~/.bash_aliases
 source ~/.prompt
+source ~/.gerrit_bash_commands.sh
+source ~/.bash_env.sh
 source /usr/share/undistract-me/long-running.bash
 
 notify_when_long_running_commands_finish_install
